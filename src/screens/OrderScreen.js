@@ -67,11 +67,6 @@ const OrderScreen = ({ match }) => {
     dispatch(payOrder(orderId, paymentResult));
   };
   
-  const checkOutHandler = () => {
-    history.push("/payment");
-  };
-
-
   return (
     <>
       <Header />
