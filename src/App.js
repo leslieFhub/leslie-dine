@@ -12,13 +12,12 @@ import ShippingScreen from "./screens/ShippingScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
-import CODelivery from "./screens/CODelivery";
 import OrderScreen from "./screens/OrderScreen";
 import NotFound from "./screens/NotFound";
 import PrivateRouter from "./PrivateRouter";
 import About from "./screens/About";
 import Faqs from "./screens/Faqs";
-import CODOrderScreen from "./screens/CODOrderScreen"
+
 
 
 const App = () => {
@@ -44,10 +43,8 @@ const App = () => {
         <PrivateRouter path="/shipping" component={ShippingScreen} />
         
         <PrivateRouter path="/placeorder" component={PlaceOrderScreen} />
-        <PrivateRouter path="/COD" component={CODelivery} />
         <PrivateRouter path="/order/:id" component={OrderScreen} />
         <Router path="/payment" component={PaymentScreen} />
-        <PrivateRouter path="/orderCOD/:id" component={CODOrderScreen} />
         <Route path="*" component={NotFound} />
       </Switch>
     </Router>
