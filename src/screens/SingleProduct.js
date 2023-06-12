@@ -49,7 +49,6 @@ const SingleProduct = ({ history, match }) => {
     const stocksRemainingParam = urlParams.get('stocksRemaining');
     if (qtyParam && stocksRemainingParam) {
       setQty(Number(qtyParam));
-      setStocksRemaining(Number(stocksRemainingParam));
     }
   }, [dispatch, productId]);
   
