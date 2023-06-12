@@ -153,12 +153,6 @@ const PlaceOrderScreen = ({ history }) => {
                 </tr>
                 <tr>
                   <td>
-                    <strong>Tax</strong>
-                  </td>
-                  <td>Php {cart.taxPrice}</td>
-                </tr>
-                <tr>
-                  <td>
                     <strong>Total</strong>
                   </td>
                   <td>Php {cart.totalPrice}</td>
