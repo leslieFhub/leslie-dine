@@ -41,6 +41,19 @@ const SingleProduct = ({ history, match }) => {
     dispatch(listProductDetails(productId));
   }, [dispatch, productId, successCreateReview]);
 
+  useEffect(() => {
+    dispatch(listProductDetails(productId));
+  
+    const urlParams = new URLSearchParams(window.location.search);
+    const qtyParam = urlParams.get('qty');
+    const stocksRemainingParam = urlParams.get('stocksRemaining');
+    if (qtyParam && stocksRemainingParam) {
+      setQty(Number(qtyParam));
+      setStocksRemaining(Number(stocksRemainingParam));
+    }
+  }, [dispatch, productId]);
+  
+
   const AddToCartHandle = (e) => {
     e.preventDefault();
     history.push(`/cart/${productId}?qty=${qty}`);
@@ -85,16 +98,16 @@ const SingleProduct = ({ history, match }) => {
                     <div className="flex-box d-flex justify-content-between align-items-center">
                       <h6>Status</h6>
                       {product.countInStock > 0 ? (
-                        <span>In Stock</span>
+                        <span className="text-success">In Stock</span>
                       ) : (
-                        <span>unavailable</span>
+                        <span className="text-danger">Unavailable</span>
                       )}
                     </div>
                     <div className="flex-box d-flex justify-content-between align-items-center">
                       <h6>Reviews</h6>
                       <Rating
                         value={product.rating}
-                        text={`${product.numReviews}`}
+                        text={`${product.numReviews} reviews`}
                       />
                     </div>
                     {product.countInStock > 0 ? (
