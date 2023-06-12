@@ -67,6 +67,11 @@ const OrderScreen = ({ match }) => {
     dispatch(payOrder(orderId, paymentResult));
   };
   
+  const checkOutHandler = () => {
+    history.push("/payment");
+  };
+
+
   return (
     <>
       <Header />
@@ -141,12 +146,6 @@ const OrderScreen = ({ match }) => {
                         <strong>Shipping</strong>
                       </td>
                       <td>Php {order.shippingPrice}.00</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <strong>Tax</strong>
-                      </td>
-                      <td>Php {order.taxPrice}</td>
                     </tr>
                     <tr>
                       <td>
